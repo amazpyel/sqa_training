@@ -9,14 +9,27 @@ import java.util.Scanner;
  */
 public class Intermediate {
     public static void main(String[] args) {
-       Intermediate intermediate = new Intermediate();
-       intermediate.sumDigits();
+        Intermediate intermediate = new Intermediate();
+        intermediate.sumDigits();
+        intermediate.countLuckyTickets();
     }
 
-    public void sumDigits() {
-        Scanner userInput = new Scanner( System.in );
+    private void countLuckyTickets() {
+    }
+
+    private void sumDigits() {
+        Scanner userInput = new Scanner(System.in);
         System.out.print("Please enter a number: ");
-        int number = userInput.nextInt();
+        String number = userInput.next();
         System.out.println("You entered " + number);
+
+        int sumDigits = 0;
+        int[] numberArray = new int[number.length()];
+        for (int i = 0; i < number.length(); i++) {
+            numberArray[i] = number.charAt(i) - '0';
+            sumDigits += numberArray[i];
+        }
+        System.out.println();
+        System.out.println("Sum of digits is " + sumDigits);
     }
 }
