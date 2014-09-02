@@ -14,15 +14,14 @@ public class Intermediate {
         intermediate.countLuckyTickets();
     }
 
+    //TODO: implement method
     private void countLuckyTickets() {
     }
-
     private void sumDigits() {
         Scanner userInput = new Scanner(System.in);
         System.out.print("Please enter a number: ");
         String number = userInput.next();
         System.out.println("You entered " + number);
-
         int sumDigits = 0;
         int[] numberArray = new int[number.length()];
         for (int i = 0; i < number.length(); i++) {
