@@ -1,32 +1,41 @@
+package HW1;
+
 import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA.
- * User: pylkevych
+ * Author: Oleksandr Pylkevych o.pylkevych@gmail.com
  * Date: 9/1/14
  * Time: 12:08 PM
- * To change this template use File | Settings | File Templates.
+ * <p/>
+ * Description:
+ * - How many lucky tickets in the tickets package with numbers
+ * from 000001 till 999999 where the number is six decimal digits,
+ * and lucky is when the sum of the first three digits is equal to
+ * the sum of the last three digits?
+ * <p/>
+ * - User inputs natural number. Calculate sum of digits.
  */
 public class Intermediate {
     public static void main(String[] args) {
-        Intermediate intermediate = new Intermediate();
-        intermediate.sumDigits();
+        sumDigits();
         System.out.println();
-        intermediate.countLuckyTickets();
+        countLuckyTickets();
     }
 
-    private void countLuckyTickets() {
+    private static void countLuckyTickets() {
         int count = 0;
-        for(int i=1; i<= 999999; i++) {
+        for (int i = 1; i <= 999999; i++) {
             int left = i / 100000 + i % 100000 / 10000 + i % 10000 / 1000;
-            int right = i  % 1000 / 100 + i % 100 / 10 + i % 10;
-            if(left == right) {
+            int right = i % 1000 / 100 + i % 100 / 10 + i % 10;
+            if (left == right) {
                 count++;
             }
         }
-        System.out.println("Number of lucky tickets is " + count);
+        System.out.println("Quantity of lucky tickets is " + count);
     }
-    private void sumDigits() {
+
+    private static void sumDigits() {
         Scanner userInput = new Scanner(System.in);
         System.out.print("Please enter a number: ");
         String number = userInput.next();
