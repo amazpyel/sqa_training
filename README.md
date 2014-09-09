@@ -1,5 +1,6 @@
-sqa_training
-============
+SQA training course
+=========
 
-- SQA training exersises 
-- jxl.jar is required for HW2
+  - JExcelApi is required
+  - Selenium WebDriver is required
+  - JUnit is required
