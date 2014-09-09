@@ -1,17 +1,18 @@
+package HW1;
+
 /**
  * Created with IntelliJ IDEA.
  * Author: Oleksandr Pylkevych o.pylkevych@gmail.com
  * Date: 9/1/14
  * Time: 10:58 AM
- *
- * Description: Home work after lecture 2
+ * <p/>
+ * Description:
  * - Find the average of the one-dimensional array consisting of the numbers
  * - Find the sum of the elements in a two dimensional array
  * - Find the average of a two-dimensional array
  * - The maximum and minimum value in the one-dimensional array, and swap them
  * - Find the maximum and minimum values ​​in a two-dimensional array, and swap them.
  */
-
 public class Simple {
     public static void main(String[] args) {
 
@@ -22,28 +23,26 @@ public class Simple {
                 {1, 2, 100}
         };
 
-        Simple simple = new Simple();
-
-        simple.printArray(array);
+        printArray(array);
         System.out.println();
-        simple.printArray(array2d);
-        double avg = simple.getAvgInArray(array);
+        printArray(array2d);
+        double avg = getAvgInArray(array);
         System.out.println("Average value in array is " + avg);
 
-        double avg2d = simple.getAvgInArray(array2d);
+        double avg2d = getAvgInArray(array2d);
         System.out.println("Average value in 2d array is " + avg2d);
-        System.out.println("Sum of all elements in 2d array is " + simple.getSumArray2d(array2d) + "\n");
+        System.out.println("Sum of all elements in 2d array is " + getSumArray2d(array2d) + "\n");
 
-        int arrayResult[] = simple.maxMinSwapArray(array);
+        int arrayResult[] = maxMinSwapArray(array);
         System.out.print("After swap ");
-        simple.printArray(arrayResult);
+        printArray(arrayResult);
         System.out.println("\n");
-        int array2dResult[][] = simple.maxMinSwapArray(array2d);
+        int array2dResult[][] = maxMinSwapArray(array2d);
         System.out.print("After swap ");
-        simple.printArray(array2dResult);
+        printArray(array2dResult);
     }
 
-    public double getAvgInArray(int[] values) {
+    public static double getAvgInArray(int[] values) {
         double sum = 0.0;
 
         for (double i : values) {
@@ -52,7 +51,7 @@ public class Simple {
         return sum / values.length;
     }
 
-    public double getAvgInArray(int array2d[][]) {
+    public static double getAvgInArray(int array2d[][]) {
         int sum = 0;
         int count = 0;
         for (int row = 0; row < array2d.length; row++) {
@@ -64,7 +63,7 @@ public class Simple {
         return sum / count;
     }
 
-    public int getSumArray2d(int array2d[][]) {
+    public static int getSumArray2d(int array2d[][]) {
         int sum = 0;
         for (int row = 0; row < array2d.length; row++)
             for (int column = 0; column < array2d[row].length; column++)
@@ -72,7 +71,7 @@ public class Simple {
         return sum;
     }
 
-    public int[] maxMinSwapArray(int array[]) {
+    public static int[] maxMinSwapArray(int array[]) {
         int temp;
         int minIndex = 0;
         int maxIndex = 0;
@@ -97,7 +96,7 @@ public class Simple {
         return array;
     }
 
-    public int[][] maxMinSwapArray(int array2d[][]) {
+    public static int[][] maxMinSwapArray(int array2d[][]) {
         int temp;
         int minIndexColumn = 0;
         int minIndexRow = 0;
@@ -116,7 +115,7 @@ public class Simple {
                 if (array2d[row][column] > max) {
                     max = array2d[row][column];
                     maxIndexColumn = column;
-                    maxIndexRow =row;
+                    maxIndexRow = row;
                 }
             }
         }
@@ -128,7 +127,7 @@ public class Simple {
         return array2d;
     }
 
-    public void printArray(int array2d[][]) {
+    public static void printArray(int array2d[][]) {
         System.out.println("2D Array: ");
         for (int row = 0; row < array2d.length; row++) {
             for (int column = 0; column < array2d[row].length; column++) {
@@ -138,7 +137,7 @@ public class Simple {
         }
     }
 
-    public void printArray(int array[]) {
+    public static void printArray(int array[]) {
         System.out.println("Array: ");
         for (int i : array) {
             System.out.print(i + " ");
