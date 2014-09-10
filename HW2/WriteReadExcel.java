@@ -1,3 +1,5 @@
+package HW2;
+
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -12,10 +14,16 @@ import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
- * User: pylkevych
+ * Author: Oleksandr Pylkevych o.pylkevych@gmail.com
  * Date: 9/8/14
  * Time: 2:21 PM
- * To change this template use File | Settings | File Templates.
+ * <p/>
+ * Description:
+ * - The program fills in Excel cell 10x10 with random 2-digit numbers (starting with A0)
+ * - The program reads lines from Excel-file. Every line is considered one test case.
+ * If the line average value greater than 70, the program in the 11th column of this
+ * row in front writes "Fail" and outputs a message to the console. If the average is
+ * less than 70 - we say that the test is passed (in the console too).
  */
 public class WriteReadExcel {
     public static void main(String[] args) {
