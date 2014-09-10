@@ -1,3 +1,5 @@
+package HW2;
+
 import java.io.*;
 import java.util.zip.Deflater;
 import java.util.zip.ZipEntry;
@@ -5,10 +7,13 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * Created with IntelliJ IDEA.
- * User: pylkevych
+ * Author: Oleksandr Pylkevych o.pylkevych@gmail.com
  * Date: 9/8/14
  * Time: 7:19 PM
- * To change this template use File | Settings | File Templates.
+ * <p/>
+ * Description:
+ * - The program generates a lot of text files in a single folder
+ * (more than 100) and in the same folder creates an archive file.
  */
 public class Archive {
 
@@ -61,11 +66,11 @@ public class Archive {
 
     public static void genTextFiles(int count) {
         try {
-            for(int i = 1; i <= count; i++) {
-            File file = new File(i + ".txt");
-            FileWriter writer = new FileWriter(file);
-            writer.flush();
-            writer.close();
+            for (int i = 1; i <= count; i++) {
+                File file = new File(i + ".txt");
+                FileWriter writer = new FileWriter(file);
+                writer.flush();
+                writer.close();
             }
         } catch (IOException e) {
             System.out.println(e);
