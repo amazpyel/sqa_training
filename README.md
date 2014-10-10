@@ -9,3 +9,5 @@ The following tools is required:
   - Android SDK
   - Robotium
   - XLRD, XLUTILS, XLWT
+
+REQUIRED UPDATE!!!
