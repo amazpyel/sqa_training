@@ -1,17 +1,20 @@
 import unittest
 import requests
 import lxml.html
+import xmlrunner
 
 
 class TestHtmlTask(unittest.TestCase):
     def setUp(self):
-        self.ulr_google = "https://www.google.com.ua/"
-        self.url_habr = "http://habrahabr.ru/hub/gdev/"
+        self.urls = open("urls.txt", 'r')
+        self.url_google = self.urls.readline()
+        self.url_habr = self.urls.readline()
+        self.urls.close()
 
     def test_1(self):
         expected_response_1 = 200
-        r = requests.get(self.ulr_google)
-        self.assertEqual(r.status_code, expected_response_1)
+        r = requests.get(self.url_google.strip())
+        self.assertEqual(r.status_code, expected_response_1, msg='{0}, {1}')
 
     def test_2(self):
         expected_response_2 = "Game Development"
@@ -19,5 +22,6 @@ class TestHtmlTask(unittest.TestCase):
         title = t.find(".//title").text.split('/')
         self.assertEqual(title[0].rstrip(), expected_response_2)
 
+
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
