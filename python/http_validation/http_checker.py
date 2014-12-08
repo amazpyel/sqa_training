@@ -14,7 +14,7 @@ class TestHtmlTask(unittest.TestCase):
     def test_1(self):
         expected_response_1 = 200
         r = requests.get(self.url_google.strip())
-        self.assertEqual(r.status_code, expected_response_1, msg='{0}, {1}')
+        self.assertEqual(r.status_code, expected_response_1)
 
     def test_2(self):
         expected_response_2 = "Game Development"
