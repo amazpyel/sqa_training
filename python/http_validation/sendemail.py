@@ -13,8 +13,8 @@ def send_email(fileToSend, subject):
     username = credentials.readline().rstrip()
     password = credentials.readline()
     credentials.close()
-    emailfrom = "o.pylkevych@gmail.com"
-    emailto = "o.pylkevych@gmail.com"
+    emailfrom = "set_you_email@gmail.com"
+    emailto = "set_you_email@gmail.com"
     msg = MIMEMultipart()
     msg["From"] = emailfrom
     msg["To"] = emailto
