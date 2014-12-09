@@ -1,5 +1,6 @@
 import smtplib
 import mimetypes
+from getpass import getpass
 from email.mime.multipart import MIMEMultipart
 from email import encoders
 from email.mime.audio import MIMEAudio
@@ -10,11 +11,11 @@ from email.mime.text import MIMEText
 
 def send_email(fileToSend, subject):
     credentials = open("credentials.txt")
-    username = credentials.readline().rstrip()
-    password = credentials.readline()
+    username = raw_input("Enter email: ")
+    password = getpass("Enter password: ")
     credentials.close()
-    emailfrom = "set_you_email@gmail.com"
-    emailto = "set_you_email@gmail.com"
+    emailfrom = "o.pylkevych@gmail.com"
+    emailto = "o.pylkevych@gmail.com"
     msg = MIMEMultipart()
     msg["From"] = emailfrom
     msg["To"] = emailto
